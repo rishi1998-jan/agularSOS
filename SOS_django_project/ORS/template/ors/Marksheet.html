@@ -1,0 +1,100 @@
+
+
+
+<!-- <body style="background-color: whitesmoke;background-image:url(https://png.pngtree.com/thumb_back/fw800/back_our/20190617/ourmid/pngtree-pencil-book-children-s-hand-painted-design-poster-banner-image_124384.jpg); background-repeat:no-repeat;width: 100%; background-size: cover"> -->
+    <body style="background-color: whitesmoke;background-image:url(https://wallpaperaccess.com/full/3847549.jpg); background-repeat:no-repeat;width: 100%; background-size: cover"></body>
+    <!-- <body style="background-color: whitesmoke;background-image:url(https://wallpaperaccess.com/full/1398385.jpg); background-repeat:no-repeat;width: 100%; background-size: cover">	 -->
+        
+        {% include  "./Header.html"%}
+        <div class="container">
+            
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style=" width: 500px;background-color: rgba(241, 229, 229, 0.972);">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title " style="font-family: bold; font-size: xx-large;padding-left: 97px;">Marksheet Information</h4>
+                    </div>
+                    <form class="form" method="POST">
+        
+                            {% if form.error  %}
+                            <p style="color: red;"> {{form.message}}</p>
+                            {% else %}
+                            <p style="color:rgb(45, 187, 16) ;text-align: center;font-size: x-large;"> {{form.message}}</p>
+                            {% endif %}
+                        <div class="modal-body">
+                            <input type="hidden" name="id" value="{{form.id}}">
+        
+                            <div class="form-group row">
+                                    <div class="col-lg-1"></div>
+                                <label class="col-lg-3 form-control-label">Roll No.<span style="color: red;"> * </span> </label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" name="rollNumber" value="{{form.rollNumber}}" placeholder="Enter your Roll Number">
+                                    <span style="color: red;"> {{form.inputError.rollNumber}} </span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg-1"></div>
+                                <label class="col-lg-3 form-control-label">Name <span style="color: red;"> * </span> </label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" name="name" value="{{form.name}}" placeholder="Enter your Name">
+                                    <span style="color: red;"> {{form.inputError.name}} </span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg-1"></div>
+                                <label class="col-lg-3 form-control-label">Physics<span style="color: red;"> * </span></label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" type="number" name="physics" value="{{form.physics}}" placeholder="Enter your Physics Marks">
+                                    <span style="color: red;"> {{form.inputError.physics}} </span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg-1"></div>
+                                <label class="col-lg-3 form-control-label">Chemistry<span style="color: red;"> * </span></label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" type="number" name="chemistry" value="{{form.chemistry}}" placeholder="Enter your Chemistry Marks">
+                                    <span style="color: red;"> {{form.inputError.chemistry}} </span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg-1"></div>
+                                <label class="col-lg-3 form-control-label">Maths<span style="color: red;"> * </span></label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" type="number" name="maths" value="{{form.maths}}" placeholder="Enter your Maths Marks">
+                                    <span style="color: red;"> {{form.inputError.maths}} </span>
+                                </div>
+                            </div>
+                            <!-- <div class="form-group row">
+                                <div class="col-lg-1"></div>
+                                <label class="col-lg-3 col-form-label form-control-label">Student<span style="color: red;"> * </span></label>
+                                <div class="col-lg-8">
+                                    <select class="form-control" name="studentName">
+                                        <option>--Select--</option>
+                                        {% for form in studentList %}
+                                       <option value="{{form.id}}">{{form.firstName}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div> -->
+        
+                            <div class="row">
+                                <div class="col-lg-4"></div>
+                                <div class="col-md-2">
+                                    <button type="submit" class="btn btn-success" >Save
+                                       
+                                    </button>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="reset" class="btn btn-primary" >Reset
+                                       
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </body>
+        {% include  "./Footer.html"%}

@@ -1,0 +1,64 @@
+
+
+
+<body style="background-color: whitesmoke;background-image:url(https://wallpaperaccess.com/full/3847549.jpg); background-repeat:no-repeat;width: 100%; background-size: cover"></body>
+
+        {% include  "./Header.html"%}
+        <div class="container"></div>
+        <div class="modal-dialog" role="document" >
+            <div class="modal-content" style="background-color: rgba(241, 229, 229, 0.972);" >
+                <div class="modal-header text-center" >
+                    <h4 class="modal-title " style="font-family: bold; font-size: xx-large;margin-left: 134px;">Role Information</h4>
+                </div>
+               
+        
+                <form class="form" method="POST">
+                        {% if form.error  %}
+                        <p style="color: red;"> {{form.message}}</p>
+                        {% else %}
+                        <p style="color:rgb(45, 187, 16) ;text-align: center;font-size: x-large;"> {{form.message}}</p>
+                        {% endif %}
+                    <input type="hidden" name="id" value="{{form.id}}">
+        
+                    <div class="modal-body">
+                        <div class="form-group row">
+                            <div class="col-lg-1"></div>
+                               
+                            <label class="col-lg-3 form-control-label">Name <span style="color: red;"> * </span> </label>
+                            <div class="col-lg-8">
+                                <input class="form-control" name="name" value="{{form.name}}" placeholder="Enter your Role Name">
+                                <span style="color: red;"> {{form.inputError.name}} </span>
+                            </div>
+                        </div>
+        
+                        <div class="form-group row">
+                                <div class="col-lg-1"></div>
+                               
+                            <label class="col-lg-3 form-control-label">Description <span style="color: red;"> * </span> </label>
+                            <div class="col-lg-8">
+                                <input class="form-control" name="description" value="{{form.description}}" placeholder="Enter your Role Description">
+                                <span style="color: red;"> {{form.inputError.description}} </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-2">
+                                    <button type="submit" class="btn btn-success" >Save
+                                       
+                                    </button>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="reset" class="btn btn-primary">Reset
+                                       
+                                    </button>
+                                </div>
+                            </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+        </div>
+        
+        </body>
+        {% include  "./Footer.html"%}

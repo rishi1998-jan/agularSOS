@@ -1,0 +1,32 @@
+
+
+
+{% load static %}
+<!-- <body style="background-color: whitesmoke;background-image:url(https://png.pngtree.com/thumb_back/fh260/background/20191106/pngtree-back-to-school-rectangular-blackboard-education-book-pen-holder-image_321417.jpg); background-repeat:no-repeat;width: 100%; background-size: cover"> -->
+{% include  "./Header.html"%}
+<body style="background-image: url('https://wallpaperaccess.com/thumb/648169.jpg');
+background-size: cover;
+height: 100vh;
+padding:0;
+margin:0;">
+<div class="container">
+    <div class="d-flex" style="margin-top: 10%">
+        <div class="mx-auto">
+                <h1 align="center">
+                        <img src="{% static '/images/img3.png'%}" class="mx-auto d-block" style="width: 45%">
+                        <br></h1> 
+                        <h6 align="center" style="font-size: xx-large;font-style: italic; color: rgb(0, 4, 255);">
+                            welcome to online result system
+                             <!-- <h1><mark style="background-color: rgb(233, 240, 215);font-style: oblique;">Welcome to "ONLINE RESULT SYSTEM"</mark></h1> -->
+                         </h6>
+                        
+                        <!-- <p>
+                <h1 align="center"><mark style="background-color: rgb(233, 240, 215);font-style: oblique;">Welcome to "ONLINE RESULT SYSTEM"</mark></h1>
+            </p>
+            -->
+            <h6 align="center"><span style="color: rgb(238, 20, 20);font-size: x-large;font-style: italic;">{{form.message}}</span></h6>
+        </div>
+    </div>    
+</div>
+</body>
+{% include  "./Footer.html"%}

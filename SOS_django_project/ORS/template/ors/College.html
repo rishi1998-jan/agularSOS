@@ -1,0 +1,99 @@
+
+
+
+<!-- <body style="background-color: whitesmoke;background-image:url(https://png.pngtree.com/thumb_back/fw800/back_our/20190617/ourmid/pngtree-pencil-book-children-s-hand-painted-design-poster-banner-image_124384.jpg); background-repeat:no-repeat;width: 100%; background-size: cover"></body> -->
+<!-- <div style="background-color: whitesmoke; height: 100%;"> -->
+    <!-- <body style="background-color: whitesmoke;background-image:url(https://image.freepik.com/free-photo/glasses-are-pink-notebook-pencil-yellow-background-there-was-pencil-stickers-paper-clips-flower-workplace-freelancer-businessman-entrepreneur_112337-1211.jpg); background-repeat:no-repeat;width: 100%; background-size: cover ">	 -->
+<body style="background-color: whitesmoke;background-image:url(https://wallpaperaccess.com/full/3847549.jpg); background-repeat:no-repeat;width: 100%; background-size: cover"></body>
+    
+    {% include  "./Header.html" %}
+    
+   
+    <div class="modal-dialog">
+    
+        <div class="modal-content" style="background-color: rgba(241, 229, 229, 0.972); ">
+            <div class="modal-header text-center ">
+                <h4  class="modal-title " style="font-family: bold; font-size: xx-large;margin-left: 134px;">College Information</h4>
+            </div>
+    
+            <form method="POST">
+                    {% if form.error  %}
+                    <p style="color: red;"> {{form.message}}</p>
+                    {% else %}
+                    <p style="color:rgb(45, 187, 16) ;text-align: center;font-size: x-large;"> {{form.message}}</p>
+                    {% endif %}
+                <input type="hidden" name="id" value="{{form.id}}">
+                <div class="modal-body">
+                    
+                <div class="col-lg-4"></div>
+                    <div class="form-group row">
+                            <div class="col-lg-1"></div>
+                        <label class="col-lg-3 form-control-label">College Name<span style="color: red;">*</span> </label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="text" name="collegeName" value="{{form.collegeName}}"placeholder="Enter your College Name">
+                            <span style="color: red;"> {{form.inputError.collegeName}} </span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                            <div class="col-lg-1"></div>
+                        <label class="col-lg-3 form-control-label">Address<span style="color: red;">*</span> </label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="text" name="collegeAddress" value="{{form.collegeAddress}}"placeholder="Enter your  Address">
+                            <span style="color: red;"> {{form.inputError.collegeAddress}} </span>
+    
+                        </div>
+                    </div>
+    
+                    <div class="form-group row">
+                            <div class="col-lg-1"></div>
+                        <label class="col-lg-3 form-control-label">State<span style="color: red;"> * </span></label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="text" name="collegeState" value="{{form.collegeState}}"placeholder="Enter your State">
+                            <span style="color: red;"> {{form.inputError.collegeState}} </span>
+    
+                        </div>
+                    </div>
+    
+                    <div class="form-group row">
+                            <div class="col-lg-1"></div>
+                        <label class="col-lg-3 form-control-label">City<span style="color: red;">*</span></label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="text" name="collegeCity" value="{{form.collegeCity}}"placeholder="Enter your City">
+                            <span style="color: red;"> {{form.inputError.collegeCity}} </span>
+    
+                        </div>
+                    </div>
+    
+                    <div class="form-group row">
+                            <div class="col-lg-1"></div>
+                        <label class="col-lg-3 form-control-label">PhoneNO <span style="color: red;"> * </span> </label>
+                        <div class="col-lg-8">
+                            <input name="collegePhoneNumber" value="{{form.collegePhoneNumber}}" class="form-control"placeholder="Enter your Phone Number">
+                            <span style="color: red;"> {{form.inputError.collegePhoneNumber}} </span>
+    
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-lg-4"></div>
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-success">Save
+                                   
+                                </button>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="reset" class="btn btn-primary">Reset
+                                   
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    
+    </div>
+    
+    </body>
+    {% include  "./Footer.html"%}

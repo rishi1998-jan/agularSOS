@@ -1,0 +1,179 @@
+
+
+
+
+
+
+<body style="background-color: whitesmoke;background-image:url(https://i.pinimg.com/originals/84/b6/d3/84b6d3c51f8aa04b7261c85edd5c4ec0.jpg); background-repeat:no-repeat;width: 100%; background-size: cover ">	
+    
+    <!-- <body style="background-color: whitesmoke;background-image:url(https://www.elmhurst.edu/wp-content/uploads/2019/05/teaching-strategies-for-connecting-students-illustration.jpg); background-repeat:no-repeat;width: 100%; background-size: cover">	 -->
+    
+    {% include  "./Header.html"%}
+    
+       
+        <div class="modal-dialog">
+                
+            <div class="modal-content" style=" width: 729px;margin-left: -118PX;background-color: rgba(241, 229, 229, 0.972);">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title "style="padding-left: 207px; font-family: bold; font-size: xx-large;">Faculty Information</h4>
+                </div>
+                <div class="modal-body">
+                   
+    
+                    <form method="POST">
+                            {% if form.error  %}
+                            <p style="color: red;"> {{form.message}}</p>
+                            {% else %}
+                            <p style="color:rgb(45, 187, 16) ;text-align: center;font-size: x-large;"> {{form.message}}</p>
+                            {% endif %}
+                        <input type="hidden" name="id" value="{{form.id}}">
+                        <div class="form-group row">
+                            <label class="col-lg-2 form-control-label">FirstName <span style="color: red">*</span> </label>
+                            <div class="col-lg-4">
+                                <input class="form-control" name="firstName" value="{{form.firstName}}" placeholder="Enter your First Name">
+                                <span style="color: red;"> {{form.inputError.firstName}}</span>
+                            </div>
+                            <label class="col-lg-2 form-control-label">Last Name<span style="color: red">*</span></label>
+                            <div class="col-lg-4">
+                                <input class="form-control" name="lastName" value="{{form.lastName}}" placeholder="Enter your Last Name">
+                                <span style="color: red;"> {{form.inputError.lastName}} </span>
+    
+                            </div>
+                        </div>
+                       
+                        
+                        <div class="form-group row">
+                            <label class="col-lg-2 form-control-label">Email<span style="color: red">*</span></label>
+                            <div class="col-lg-4">
+                                <input class="form-control" name="email" value="{{form.email}}" placeholder="Enter your Email id" type="email">
+                                <span style="color: red;"> {{form.inputError.email}} </span>
+    
+                            </div>
+                            <label class="col-lg-2 form-control-label">password <span style="color: red">*</span> </label>
+                            <div class="col-lg-4">
+                                
+                                    <input class="form-control" name="password" value="{{form.password}}" placeholder="Enter your Password"type="password">
+    
+                                <span style="color: red;"> {{form.inputError.password}} </span>
+                            </div>
+                        </div>
+    
+                        <div class="form-group row">
+                            
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label class="col-lg-2 form-control-label">Address<span style="color: red">*</span> </label>
+                            <div class="col-lg-4">
+                                <input class="form-control" name="address" value="{{form.address}}" placeholder="Enter your Address">
+                                <span style="color: red;"> {{form.inputError.address}} </span>
+                            </div>
+                            <label class="col-lg-2 form-control-label">Gender<span style="color: red">*</span> </label>
+                            <div class="col-lg-4">
+                                <select class="form-control" name="gender">
+                                    <option>--Select--</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                              
+                                <span style="color: red;"> {{form.inputError.gender}} </span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-2 form-control-label">DOB<span style="color: red">*</span> </label>
+                            <div class="col-lg-4">
+                                <input  style="cursor: pointer" readonly id = "datepicker"   name="dob" value="{{form.dob}}" class="form-control"
+                                placeholder="MM-DD-YYYY" />
+                                <span style="color: red;"> {{form.inputError.dob}} </span>
+                            </div>
+                            <label class="col-lg-2 form-control-label">College<span style="color: red;">*</span></label>
+                                <div class="col-lg-4">
+                                    <select class="form-control" name="college_ID">
+                                        <option>--Select--</option>
+                                        {% for form in collegeList %}
+                                        <option value="{{form.id}}">{{form.collegeName}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            <!-- <label class="col-lg-2 form-control-label">College<span style="color: red;">*</span></label>
+                                <div class="col-lg-4">
+                                    <select class="form-control" name="college_ID">
+                                        <option>--Select--</option>
+                                        {% for form in collegeList %}
+                                        <option value="{{form.id}}">{{form.collegeName}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div> -->
+                        </div>
+                       
+                        <!-- <label class="col-lg-3 form-control-label">courseName<span style="color: red;">*</span> </label>
+                        <div class="col-lg-8">
+                            <select class="form-control" name="course_ID">
+                                <option>--Select--</option>
+                                {% for form in collegeList %}
+                               <option value="{{form.id}}">{{form.courseName}}</option>
+                                {% endfor %}
+                            </select>
+                        </div> -->
+                        
+                        <div class="form-group row">
+                            <!-- <label class="col-lg-2 form-control-label">Subject_ID<span style="color: red">*</span> </label>
+                            <div class="col-lg-4">
+                                <input class="form-control" name="subject_ID" value="{{form.subject_ID}}" placeholder="Enter your Subject_id">
+                                <span style="color: red;"> {{form.inputError.subject_ID}} </span>
+                            </div> -->
+                            <label class="col-lg-2 form-control-label">SubjectName<span style="color: red">*</span> </label>
+                            <div class="col-lg-4">
+                                <!-- <input class="form-control" name="subjectName" value="{{form.subjectName}}" placeholder="Enter your Subject Name"> -->
+                                <select class="form-control" name="subject_ID">
+                                    <option>--Select--</option>
+                                    {% for form in subjectList %}
+                                   <option value="{{form.id}}">{{form.subjectName}}</option>
+                                    {% endfor %}
+                                </select>
+                                <!-- <span style="color: red;"> {{form.inputError.subjectName}} </span> -->
+    
+                            </div>
+                            <label class="col-lg-2 form-control-label">courseName<span style="color: red;">*</span> </label>
+                                <div class="col-lg-4">
+                                    <select class="form-control" name="course_ID">
+                                        <option>--Select--</option>
+                                        {% for form in courseList %}
+                                       <option value="{{form.id}}">{{form.courseName}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                        </div>
+                        
+                        
+                        
+       
+                        <div class="row">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-2">
+                                    <button type="submit" class="btn btn-success" style="width: 100px">Save
+                                       
+                                    </button>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="reset" class="btn btn-primary" style="width: 100px">Reset
+                                       
+                                    </button>
+                                </div>
+                            </div>
+    
+                        
+                </div>
+                </form>
+            </div>
+        </div>
+    
+    </div>
+    </div>
+    
+    </body>
+    {% include  "./Footer.html"%}
+    

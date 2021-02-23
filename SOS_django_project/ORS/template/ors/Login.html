@@ -1,0 +1,108 @@
+
+
+
+<!-- <body style="background-color: whitesmoke;"> -->
+    {% include  "./Header.html"%}
+    
+    <body style="background-color: whitesmoke;background-image:url(https://wallpaperaccess.com/full/3847549.jpg); background-repeat:no-repeat;width: 100%; background-size: cover"></body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <br>
+    <br>
+    <br>
+    
+    <div class="container-fluid">
+        <div class="row">
+           <div class="col-lg-4"></div>
+    
+            <div class="col-lg-4" >
+                <div class="card" style="background-color: rgba(241, 229, 229, 0.972); ">
+                    <div class="card-header ">
+                        <h2 class="modal-title" style="padding-left: 143px; font-family: bold; font-size: xx-large">LogIn</h2>
+                    </div>
+                        <div class="container-fluid">
+                                <!-- <div class="col-md-4"></div> -->
+                                
+                                {% if form.error  %}
+                                <p style="color: red;font-size: xx-large;"> {{form.message}}</p>
+                                {% else %}
+                                <p style="color:rgb(42, 211, 19) ;text-align: center;font-size: x-large;"> {{form.message}}</p>
+                                {% endif %}   
+                            <form action="/ORS/Login/" method="POST" novalidate>
+                                <div class="modal-body">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 form-control-label">Login <span style="color: red;"> * </span> </label>
+                                        <div class="col-md-8">
+                                            <input class="form-control" name="login_id" value="{{form.login_id}}"
+                                                placeholder="Enter your Login ID" type="email">
+                                            <span style="color: red;"> {{form.inputError.login_id}} </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-4 form-control-label">Password<span style="color: red;">*</span> </label>
+                                        <div class="col-md-8">
+                                            <input class="form-control" name="password" value="{{form.password}}" type="password"
+                                                placeholder="Enter your Password">
+                                            <span style="color: red;"> {{form.inputError.password}} </span>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="form-group-row">
+                                        
+                                        <label class="col-lg-4 control-label">Login </label>
+                                        <div class="col-md-12 inputGroupContainer">
+                                            <div class="input-group">
+                                                <input name="login_id" value="{{form.login_id}}" class="form-control" type="email" placeholder="Enter your Id">
+                                                <span style="color: red;"> {{form.inputError.login_id}} </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group-row">
+                                        <label class="col-md-12 control-label">Password</label>
+                                        <div class="col-md-12 inputGroupContainer">
+                                            <div class="input-group">
+                                                <input name="password" value="{{form.password}}" class="form-control"
+                                                    type="password" id="password" required class="form-control" placeholder="Enter Your Password">
+                                                <span style="color: red;"> {{form.inputError.password}} </span>
+    
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <br>
+                                    <div class="row">
+                                        <label class="col-md-2 control-label"></label>
+                                        <div class="col-md-2">
+                                            <button type="submit" value="SingnIn" class="btn btn-primary">Login
+                                                
+                                            </button>
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-2">
+                                                <a class="btn btn-success" href="/ORS/Registration">SignUp</a>
+                                                
+                                        </div>
+    
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4"></div>
+                                            <a href="/ORS/ForgetPassword" style="color: rgb(212, 16, 196);">forgot Password</a>
+                                        <div class="col-md-4"></div>
+    
+    
+                                    </div>
+                                    
+                               
+                            </form>
+                        </div>
+                   
+                </div>
+                </div>
+    
+        </div>        
+        {% include  "./Footer.html"%}
+    </div>
+    
+    <div class="col-md-4"></div>
+    <!-- <div class="img2">
+    
+    </div> -->
+    </body>
+{% include  "./Footer.html"%}
